@@ -6,19 +6,19 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:22:21 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/06 17:59:52 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/24 08:35:45 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
+#include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= 48 && c <= 57)
-    {
-    return 1;
-    }
-    return 0;
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	return (0);
 }
 /*
 int main(void)

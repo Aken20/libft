@@ -6,41 +6,50 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:31:29 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/14 18:38:01 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/24 09:31:57 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, int n)
+void	*ft_rev_move(char *c_dest, char *c_src, int n)
 {
-    char *c_dest = (char *) dest;
-    char *c_src = (char *) src;
-    int i;
-    i = 0;
-    if (c_src > c_dest)
-    {
-        i = 0;
-        while(i < n)
-        {
-            c_dest[i] = c_src[i];
-            ++i;
-        }
-        return 0;
-    }
-    else if (c_src < c_dest)
-    {
-        i = --n;
-        while (i >= 0)
-        {
-        c_dest[i] = c_src[i];
-        --i;    
-        }
-        return 0;
-    }
-        return dest;
+	int	i;
+
+	i = --n;
+	while (i >= 0)
+	{
+		c_dest[i] = c_src[i];
+		--i;
+	}
+	return (0);
 }
+
+void	*ft_memmove(void *dest, const void *src, int n)
+{
+	char	*c_dest;
+	char	*c_src;
+	int		i;
+
+	i = 0;
+	c_dest = (char *) dest;
+	c_src = (char *) src;
+	if (c_src > c_dest)
+	{
+		while (i < n)
+		{
+			c_dest[i] = c_src[i];
+			++i;
+		}
+		return (0);
+	}
+	else if (c_src < c_dest)
+	{
+		ft_rev_move(c_dest, c_src, n);
+	}
+	return (dest);
+}
+/*
 int main()
 {
     char src[] = "12345";
@@ -54,4 +63,4 @@ int main()
     memmove(src2 , src2 +2, 4);
     printf("memmove %s\n", src);
     return 0;
-}
+}*/

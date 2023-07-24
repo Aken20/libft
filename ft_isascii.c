@@ -6,17 +6,17 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:29:26 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/06 17:59:56 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/24 08:34:20 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
+#include "libft.h"
 
-int ft_ascii(int c)
+int	ft_ascii(int c)
 {
-    if (c <= 0 && c >= 127)
-    {
-        return 1;
-    }
-    return 0;
+	if (c <= 0 && c >= 127)
+	{
+		return (1);
+	}
+	return (0);
 }
