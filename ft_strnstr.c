@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:03:28 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/24 12:42:59 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:56:53 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,5 @@ int main()
     char k2[] = "city";
     printf("org: %s\n", strnstr(m, m2, 20));
     printf("my: %s\n", ft_strnstr(k, k2, 20));
-    
 }
 */

@@ -6,67 +6,28 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 23:37:36 by ahibrahi          #+#    #+#              #
-#    Updated: 2023/07/24 13:06:50 by ahibrahi         ###   ########.fr        #
+#    Updated: 2023/07/24 14:27:24 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC = cc
+CFLAGS = -Wall -Werror -Wextra
 NAME = libft.a
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+      ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
+      ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c
 
-SRCS =  isalpha.c /
-		isdigit.c /
-		isalnum.c /
-		isascii.c /
-		isprint.c /
-		strlen.c /
-		memset.c /
-		bzero.c /
-		memcpy.c /
-		memmove.c /
-		strlcpy.c /
-		strlcat.c /
-		toupper.c /
-		tolower.c /
-		strchr.c /
-		strrchr.c /
-		strncmp.c /
-		memchr.c /
-		memcmp.c /
-		strnstr.c 
-
-OBJECTS =	isalpha.o /
-			isdigit.o /
-			isalnum.o /
-			isascii.o /
-			isprint.o /
-			strlen.o /
-			memset.o /
-			bzero.o /
-			memcpy.o /
-			memmove.o /
-			strlcpy.o /
-			strlcat.o /
-			toupper.o /
-			tolower.o /
-			strchr.o /
-			strrchr.o /
-			strncmp.o /
-			memchr.o /
-			memcmp.o /
-			strnstr.o 
-
-INCLUDES = ./
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRCS) libft.h
-	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
+$(NAME): $(OBJ)
+		ar -rcs $(NAME) $(OBJ)
 
 clean:
-	@/bin/rm -f $(OBJECTS)
+		rm -f $(OBJ)
+
+re: clean all
 
 fclean: clean
-	@/bin/rm -f $(NAME)
-
-re: fclean all
+		rm -f $(NAME)
