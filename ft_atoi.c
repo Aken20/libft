@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 06:50:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/27 20:42:25 by aken             ###   ########.fr       */
+/*   Updated: 2023/07/29 02:20:57 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	if (str[i] == 0)
 		return (0);
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32) || (str[i] == 2))
 		++i;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -52,14 +52,15 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		aoi = (aoi * 10) + ft_change(str[i++]);
+		aoi = (aoi * 10) + ft_change(str[i]);
+		++i;
 	}
 	return (aoi * s);
 }
-
+/*
 int	main(void)
 {
-	char	s[] = "    ++129584fk776";
+	char	s[] = "    -65764fk776";
 	int		at;
 	int		aoi;
 
@@ -68,3 +69,4 @@ int	main(void)
 	printf("min %i\n", at);
 	printf("org %d\n", aoi);
 }
+*/

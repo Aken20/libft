@@ -6,30 +6,25 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:15:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/24 11:16:41 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/29 02:49:15 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(char *c)
+int	ft_toupper(int c)
 {
-	int	i;
+	int				i;
+	unsigned char	cc;
 
 	i = 0;
-	while (c[i] != '\0')
+	if (c >= 97 && c <= 122)
 	{
-		if (c[i] >= 97 && c[i] <= 122)
-		{
-			c[i] -= 32;
-			++i;
-		}
-		else
-		{
-			++i;
-		}
+		cc = c - 32;
+		return (cc);
 	}
-	return (*c);
+	else
+		return (c);
 }
 /*
 int main (void)
@@ -37,10 +32,11 @@ int main (void)
 int i;
 i = 0;
 char c[] = "abcdefgoudj";
-ft_toupper (c);
-while (c[i] != 0)
+char *cc;
+*cc = ft_toupper (c);
+while (cc[i] != 0)
 {
-write (1, &c[i], 1);
+write (1, &cc[i], 1);
 ++i;
 }
 write (1, "\n", 1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 12:00:07 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/28 05:32:42 by aken             ###   ########.fr       */
+/*   Updated: 2023/07/29 00:36:28 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	if (size < c)
 		return (n + size);
 	k = c;
-	while (i + 1 < size - k && src[i])
+	while (i + 1 < size - k)
 	{
 		dest[c] = src[i];
 		i++;
@@ -48,17 +48,18 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	else 
 		return (size + n);
 }
-
+/*
 int main()
 {
-char src[] = "hashiramertyuiopoiuykkooaa";
-//char dest[51] = "mindok";
-char dest2[51] = "mindok";
+char src[] = " im going to";
+char dest[30] = "mindok";
+char dest2[30] = "mindok";
 size_t s;
-s = 21;
-//int i = strlcat(dest, src, s);
+s = 30;
+int i = strlcat(dest, src, s);
 int k = ft_strlcat(dest2, src, s);
-//printf("org: %s\t%d\n", dest, i);
+printf("org: %s\t%d\n", dest, i);
 printf("mine: %s\t%d\n", dest2, k);
 return 0;
 }
+*/

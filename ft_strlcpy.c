@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 03:49:04 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/27 13:06:14 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/29 00:36:07 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	return (n);
 }
-
+/*
 int main()
 {
 char src[] = "hashirama";
@@ -51,3 +51,4 @@ printf("org: %s\t%d\n", dest, i);
 printf("mine: %s\t%d\n", dest2, k);
 return 0;
 }
+*/

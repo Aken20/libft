@@ -6,13 +6,13 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 12:52:10 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/24 11:35:00 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/29 01:37:15 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	ft_clen(char *str)
 {
 	int	len;
 

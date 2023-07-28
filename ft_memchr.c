@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:54:30 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/25 07:44:54 by aken             ###   ########.fr       */
+/*   Updated: 2023/07/29 01:43:44 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, int n)
 
 	i = 0;
 	c_s = (char *) s;
-	while (n >= 0)
+	while (n > 0)
 	{
 		if (*c_s != c)
 		{

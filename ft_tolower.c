@@ -6,30 +6,25 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:49:26 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/24 11:15:28 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/29 02:50:45 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(char *c)
+int	ft_tolower(int c)
 {
-	int	i;
+	int				i;
+	unsigned char	sc;
 
 	i = 0;
-	while (c[i] != '\0')
+	if (c >= 65 && c <= 90)
 	{
-		if (c[i] >= 65 && c[i] <= 90)
-		{
-			c[i] += 32;
-			++i;
-		}
-		else
-		{
-			++i;
-		}
+		sc = c + 32;
+		return (sc);
 	}
-	return (*c);
+	else
+		return (c);
 }
 /*
 int main (void)

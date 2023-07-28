@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 22:27:50 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/24 08:25:15 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/29 01:51:13 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ void	*ft_memcpy(void *dest, void *src, int n)
 	i = 0;
 	c_dest = (char *) dest;
 	c_src = (char *) src;
-	if (dest == NULL)
+	if (dest || src)
 	{
-		return (NULL);
-	}
-	while (i < n)
-	{
-		c_dest[i] = c_src[i];
-		++i;
+		while (i < n)
+		{
+			c_dest[i] = c_src[i];
+			++i;
+		}
 	}
 	return (dest);
 }

@@ -1,52 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 21:04:09 by aken              #+#    #+#             */
-/*   Updated: 2023/07/29 00:36:46 by ahibrahi         ###   ########.fr       */
+/*   Created: 2023/07/28 22:16:58 by ahibrahi          #+#    #+#             */
+/*   Updated: 2023/07/29 03:00:34 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*sub;
 	size_t	i;
 	size_t	n;
-	char	*dup;
 
 	n = 0;
 	while (s[n])
 	{
 		n++;
 	}
-	if (n == 0)
-	{
-		return (NULL);
-	}
-	dup = (char *) malloc(n);
+	//if (start >= n)
+	//{
+	//	return (0);
+	//}
 	i = 0;
-	while (i < n)
+	if (len == 0)
+		return (0);
+	sub = (char *)malloc(len);
+	while (i < len && s[start])
 	{
-		dup[i] = s[i];
-		i++;
+		sub[i] = s[start];
+		++start;
+		++i;
 	}
-	dup[i] = '\0';
-	return (dup);
+	return (sub);
 }
 /*
-int main()
+int	main(void)
 {
-	char	a[] = "kamihamiha";
-	char	*b;
-	char	*c;
+	char	s[] = "y9";
+	char	*k;
 
-	b = strdup(a);
-	c = ft_strdup(a);
-	printf("org: %s\n", b);
-	printf("mine: %s\n", c);
+	k = ft_substr(s, 0, 1);
+	printf("is :%s\n", k);
 }
 */
