@@ -1,46 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 14:54:30 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/25 07:44:54 by aken             ###   ########.fr       */
+/*   Created: 2023/07/27 20:15:12 by aken              #+#    #+#             */
+/*   Updated: 2023/07/27 20:53:44 by aken             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, int n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
+	size_t	n;
+	int		*my_cal;
 	int		i;
-	char	*c_s;
 
-	i = 0;
-	c_s = (char *) s;
-	while (n >= 0)
+	if (nmemb == 0 || size == 0)
 	{
-		if (*c_s != c)
-		{
-			++c_s;
-			--n;
-		}
-		else if (*c_s == c)
-		{
-			return (c_s);
-		}
+		return (NULL);
 	}
-	return (NULL);
+	n = nmemb * size;
+
+	my_cal = (int *)malloc(n);
+	i = 0;
+	while (i >= n)
+	{
+		my_cal[i] = 0;
+		++i;
+	}
+	return (my_cal);
 }
-/*
-int main()
+
+int	main (void)
 {
-char s[] = "mindoksai";
-int c;
-c = 'p';
-char *ptr = memchr (s, c, 7);
-printf("str: %s\n", ptr);
-char *mptr = ft_memchr (s, c, 7);
-printf("my str: %s\n", mptr);
-}*/
+	int		*min_i;
+	char	*org_c;
+	int		*org_i;
+	char	*min_c;
+
+	min_i = (int *) ft_calloc(4, 10);
+	min_c = (char *) ft_calloc(4, 10);
+	org_i = (int *) ft_calloc(4, 10);
+	org_c = (char *) ft_calloc(4, 10);
+}

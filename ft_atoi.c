@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 06:50:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/27 11:54:09 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/27 20:42:25 by aken             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,18 @@ int	ft_atoi(const char *str)
 	}
 	if (str[i] >= 48 && str[i] <= 57)
 	{
-		aoi = ft_change(str[i]);
-		++i;
+		aoi = ft_change(str[i++]);
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		aoi = (aoi * 10) + ft_change(str[i]);
-		++i;
+		aoi = (aoi * 10) + ft_change(str[i++]);
 	}
 	return (aoi * s);
 }
 
 int	main(void)
 {
-	char	s[] = "    +4544fk776";
+	char	s[] = "    ++129584fk776";
 	int		at;
 	int		aoi;
 

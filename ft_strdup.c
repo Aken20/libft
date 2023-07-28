@@ -1,46 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 14:54:30 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/25 07:44:54 by aken             ###   ########.fr       */
+/*   Created: 2023/07/27 21:04:09 by aken              #+#    #+#             */
+/*   Updated: 2023/07/27 21:39:20 by aken             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, int n)
+char	*ft_strdup(const char *s)
 {
-	int		i;
-	char	*c_s;
+	size_t	i;
+	size_t	n;
+	char	*dup;
 
-	i = 0;
-	c_s = (char *) s;
-	while (n >= 0)
+	n = 0;
+	while (s[n])
 	{
-		if (*c_s != c)
-		{
-			++c_s;
-			--n;
-		}
-		else if (*c_s == c)
-		{
-			return (c_s);
-		}
+		n++;
 	}
-	return (NULL);
+	if (n == 0)
+	{
+		return (NULL);
+	}
+	dup = (char *) malloc(n);
+	i = 0;
+	while (i < n)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	//dup[i] = '\0';
+	return (dup);
 }
-/*
+
 int main()
 {
-char s[] = "mindoksai";
-int c;
-c = 'p';
-char *ptr = memchr (s, c, 7);
-printf("str: %s\n", ptr);
-char *mptr = ft_memchr (s, c, 7);
-printf("my str: %s\n", mptr);
-}*/
+	char	a[] = "kamihamiha";
+	char	*b;
+	char	*c;
+
+	b = strdup(a);
+	c = ft_strdup(a);
+	printf("org: %s\n", b);
+	printf("mine: %s\n", c);
+}
