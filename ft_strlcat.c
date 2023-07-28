@@ -6,53 +6,56 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 12:00:07 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/27 13:28:04 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/28 09:30:37 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_len(const char *str)
+{
+	int	len;
+
+	while (str[len])
+	{
+		len++;
+	}
+	return (len);
+}
+
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	int	i;
-	int	n;
 	int	c;
+	int	n;
+	int	k;
 
-	n = 0;
 	i = 0;
-	c = 0;
-	while (src[n])
-	{
-		++n;
-	}
-	while (dest[c])
-	{
-		++c;
-	}
-	n = n + c;
-	while (size > c && size != 0 && n != 0)
+	c = ft_len(dest);
+	n = ft_len(src);
+	if (size < c)
+		return (n + size);
+	k = c;
+	while (i < size - k)
 	{
 		dest[c] = src[i];
-		++c;
-		++i;
-		--size;
+		i++;
+		c++;
 	}
-	while (size)
-	{
-		dest[i] = 0;
-		--size;
-		++i;
-	}
-	return (n);
+	dest[c] = (0);
+	if (size >= k)
+		return (k + n);
+	else 
+		return (size + n);
 }
 
 int main()
 {
-char src[] = "hashirama";
-char dest[7] = "mindok";
-char dest2[7] = "mindok";
+char src[] = "hashiramertyuiopoiuykkooaa";
+char dest[51] = "mindok";
+char dest2[51] = "mindok";
 size_t s;
-s = 7;
+s = 21;
 int i = strlcat(dest, src, s);
 int k = ft_strlcat(dest2, src, s);
 printf("org: %s\t%d\n", dest, i);
