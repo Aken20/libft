@@ -6,54 +6,53 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 12:52:10 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/29 01:37:15 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:06:43 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_clen(char *str)
+int	ft_slen(const char *str)
 {
 	int	len;
 
 	len = 0;
-	while (*str)
+	while (str[len])
 	{
 		len++;
-		str++;
 	}
 	return (len);
 }
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
 	int		n;
 	char	*c_s;
 
-	i = 0;
-	n = strlen(s) - 1;
-	while (n != 0)
+	n = ft_slen(s);
+	if (c == 0 || n == 0)
+		return (0);
+	--n;
+	while (s[n] && n >= 0)
 	{
-		++s;
+		if (s[n] == c)
+		{
+			c_s = (char *)s + n;
+			return (c_s);
+		}
 		--n;
 	}
-	while (*s != c && *s)
+	if (s[n] == c)
 	{
-		--s;
-		++n;
-	}
-	if (*s == c)
-	{
-		c_s = (char *) s;
+		c_s = (char *)s + n;
 		return (c_s);
 	}
-	return (NULL);
+	return (0);
 }
-/*
+
 int main()
 {
-char s[] = "minkdoksa987i";
+char s[] = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
 int c;
 c = 'k';
 char *ptr = strrchr (s,c);
@@ -61,4 +60,3 @@ printf("str: %s\n", ptr);
 char *mptr = ft_strrchr (s,c);
 printf("my str: %s\n", mptr);
 }
-*/

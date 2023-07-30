@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 22:16:58 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/29 03:00:34 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/30 08:34:33 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,21 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		n++;
 	}
-	//if (start >= n)
-	//{
-	//	return (0);
-	//}
+	if (start > n)
+	{
+		return (0);
+	}
 	i = 0;
 	if (len == 0)
 		return (0);
-	sub = (char *)malloc(len);
-	while (i < len && s[start])
+	sub = (char *)ft_calloc(1, len);
+	while (i <= len && s[start])
 	{
 		sub[i] = s[start];
 		++start;
 		++i;
 	}
+	sub[i] = 0;
 	return (sub);
 }
 /*

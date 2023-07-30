@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 09:23:43 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/29 02:06:32 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/30 09:06:56 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_memcmp(const void *s1, const void *s2, int n)
 	}
 	return (0);
 }
-
+/*
 int main()
 {
     char b[] = "boos9ng";
@@ -47,3 +47,4 @@ int main()
     printf("my difrent is: %d", p);
     return 0;
 }
+*/

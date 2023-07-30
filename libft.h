@@ -6,14 +6,14 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:47:00 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/29 02:45:00 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/07/30 09:11:00 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
