@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:47:00 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/30 09:11:00 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/03 01:03:53 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	*ft_bzero(void *s, int n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize
+);

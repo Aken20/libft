@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 15:09:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/24 09:46:26 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:26:28 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 
 int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
-	int	i;
+	int				i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
 	i = 0;
-	while (s1[i] && s2[i] && --n)
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	while (p1[i] && p2[i] && --n)
 	{
-		if (s1[i] == s2[i])
+		if (p1[i] == p2[i])
 		{
 			++i;
 		}
 		else
 		{
-			return (s1[i] - s2[i]);
+			return (p1[i] - p2[i]);
 		}
 	}
-	return (s1[i] - s2[i]);
+	return (p1[i] - p2[i]);
 }
 /*
 int main(void)

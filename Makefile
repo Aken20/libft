@@ -6,7 +6,7 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 23:37:36 by ahibrahi          #+#    #+#              #
-#    Updated: 2023/07/29 00:56:21 by ahibrahi         ###   ########.fr        #
+#    Updated: 2023/08/03 01:18:25 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ RM = rm -f
 FILES = ft_memset \
 		ft_bzero \
 		ft_memcpy \
+		ft_strlcat \
 		ft_memmove \
 		ft_memchr \
 		ft_memcmp \

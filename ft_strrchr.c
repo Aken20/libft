@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 12:52:10 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/30 10:06:43 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/02 15:18:24 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ char	*ft_strrchr(const char *s, int c)
 	char	*c_s;
 
 	n = ft_slen(s);
-	if (c == 0 || n == 0)
-		return (0);
+	if (c == 0)
+	{
+		c_s = (char *)s + n;
+		return (c_s);
+	}
 	--n;
 	while (s[n] && n >= 0)
 	{
@@ -49,7 +52,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
+/*
 int main()
 {
 char s[] = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
@@ -60,3 +63,4 @@ printf("str: %s\n", ptr);
 char *mptr = ft_strrchr (s,c);
 printf("my str: %s\n", mptr);
 }
+*/

@@ -6,47 +6,50 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:03:28 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/27 11:56:53 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/03 02:22:40 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft2str(char *c_s_in, char *c_s_for, int n, size_t len)
+const char	*ft2str(const char *s_in, const char *s_for, size_t len)
 {
-	while (c_s_in[n] == c_s_for[n] && c_s_for[n] && len > 0)
+	int n;
+
+	n = 0;
+	while (s_in[n] == s_for[n] && s_for[n] && len > 0)
 	{
 		++n;
 		--len;
 	}
-	if (c_s_for[n] == 0 || len == 0)
+	if (s_for[n] == 0 && len >= 0)
 	{
-		return (c_s_in);
+		return (s_in);
 	}
 	return (NULL);
 }
 
 char	*ft_strnstr(const char *s_in, const char *s_for, size_t len)
 {
-	char	*c_s_in;
-	char	*c_s_for;
 	char	*p;
-	int		n;
 
-	n = 0;
-	c_s_in = (char *) s_in;
-	c_s_for = (char *) s_for;
-	if (c_s_for == 0 || len == 0)
+	if ( s_in == 0)
 	{
 		return (NULL);
 	}
-	while (*c_s_in != *c_s_for && *c_s_in)
+		if ( s_for == 0)
 	{
-		++c_s_in;
+		p = (char *) s_in;
+		return (p);
 	}
-	while (c_s_in[n] == c_s_for[n] && c_s_for[n] && len >= 0)
+	while (*s_in != *s_for && *s_in)
 	{
-		p = ft2str(c_s_in, c_s_for, n, len);
+		++s_in;
+		--len;
+	}
+	if (*s_in == *s_for && len >= 0)
+	{
+		p = (char *) ft2str(s_in, s_for, len);
 		return (p);
 	}
 	return (NULL);
@@ -58,7 +61,7 @@ int main()
     char m2[] = "hacked";
     char k[] = "booooring city123";
     char k2[] = "city";
-    printf("org: %s\n", strnstr(m, m2, 20));
-    printf("my: %s\n", ft_strnstr(k, k2, 20));
+    printf("org: %s\n", strnstr(m, m2, 13));
+    printf("my: %s\n", ft_strnstr(k, k2, 13));
 }
 */
