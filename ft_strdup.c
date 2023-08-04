@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 21:04:09 by aken              #+#    #+#             */
-/*   Updated: 2023/07/29 00:36:46 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/04 06:00:01 by aken             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ char	*ft_strdup(const char *s)
 	{
 		n++;
 	}
-	if (n == 0)
+	if (s == 0)
 	{
 		return (NULL);
 	}
-	dup = (char *) malloc(n);
+	dup = (char *) malloc(n + 1);
+	if (dup == 0)
+	{
+		return (0);
+	}
 	i = 0;
 	while (i < n)
 	{

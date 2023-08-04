@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 20:15:12 by aken              #+#    #+#             */
-/*   Updated: 2023/07/29 02:15:16 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/04 05:44:11 by aken             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,13 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	n;
-	int		*my_cal;
-	size_t	i;
+	void	*my_cal;
 
 	n = nmemb * size;
-	my_cal = (int *)malloc(n);
-	i = 0;
-	while (i >= n)
-	{
-		my_cal[i] = 0;
-		++i;
-	}
+	my_cal = malloc(n);
+	if (my_cal == 0)
+		return (0);
+	ft_bzero(my_cal, n);
 	return (my_cal);
 }
 /*
