@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 06:50:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/03 02:52:09 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/15 11:04:52 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	s = 1;
-	//aoi = 0;
 	if (str[i] == 0)
 		return (0);
 	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
@@ -62,7 +61,7 @@ int	ft_atoi(const char *str)
 	}
 	return (aoi * s);
 }
-
+/*
 int	main(void)
 {
 	char *n = "\t\v\f\r\n \f- \f\t\n\r    06050";
@@ -71,3 +70,4 @@ int	main(void)
 	printf("min %i\n", i2);
 	printf("org %i\n", i1);
 }
+*/

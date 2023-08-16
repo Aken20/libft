@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 03:49:04 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/03 01:00:08 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/15 11:10:58 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	n;
-	
+	char	*srcc;
 
 	n = 0;
 	i = 0;
-	char *srcc = (char *)src;
-	
+	srcc = (char *)src;
 	n = ft_strlen(srcc);
-	if(!*dest)
+	if (!*dest)
 	{
 		return (n);
 	}
@@ -35,7 +34,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 			++i;
 			--dstsize;
 		}
-			dest[i] = '\0';
+		dest[i] = '\0';
 	}
 	return (n);
 }

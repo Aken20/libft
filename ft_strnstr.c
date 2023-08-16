@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aken <aken@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:03:28 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/04 06:49:56 by aken             ###   ########.fr       */
+/*   Updated: 2023/08/15 11:03:29 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *s_in, const char *s_for, size_t len)
 {
 	char	*p;
 
-	if (!s_in && !s_for)
+	if (!s_in && len == 0)
 		return (NULL);
 	if (*s_for == 0)
 	{
