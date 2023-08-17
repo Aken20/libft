@@ -6,68 +6,108 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 11:56:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/16 06:09:39 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:39:50 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_end(char const *s, char c, int start)
+static	int	ft_c(char const *s, char c)
 {
-	if (s[start] && s[start] == c)
+	int	cc;
+	int	i;
+
+	i = 0;
+	cc = 0;
+	while (s[i])
 	{
-		while (s[start] != c)
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
+		{
+			i++;
+			cc++;
+		}
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (cc + 1);
+}
+
+static	int	ft_len(char const *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	return (len);
+}
+
+static	int	ft_end(char const *s, char c, int start)
+{
+	if (s[start] && s[start] != c)
+	{
+		while (s[start] && s[start] != c)
 		{
 			start++;
 		}
 		return (start - 1);
 	}
-	else if (s[start])
-		return (start);
-	else 
-		exit (0);
-}
-
-char	**ft_set(char **d, char *k, int l)
-{
-	while (k != 0)
-		d[l++] = &*k++;
-	return (d);
+	return (start);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	start;
-	size_t	end;
+	int		start;
+	int		end;
 	char	**d;
-	char	*k;
 	int		n;
+	int		l;
+	int		len;
 
+	l = 0;
 	n = 0;
 	start = 0;
-	if (!s && !c)
+	if (!s[start] && c != 0)
 		return (0);
-	while (s && c)
+	if (s)
 	{
-		while (s[start] != c)
-			++start;
+		len = ft_len(s);
+		d = malloc(sizeof(char *) * (ft_c(s, c)));
+		if (!d)
+			return (0);
+	}
+	while (s && start <= len)
+	{
 		while (s[start] == c)
 			start++;
 		end = ft_end(s, c, start);
-		k = malloc((end - start) + 1);
-		while (start <= end)
-			k[n++] = s[start++];
+		d[l] = malloc(sizeof(char) * (end - start) + 1);
 		n = 0;
-		if (!k)
-			return (0);
-		if (k)
-			while (*d[n])
-				n++;
-		d = ft_set(d, k, n);
-		free(k);
+		while (start <= end && start <= len)
+			d[l][n++] = s[start++];
+		l++;
 	}
 	if (d)
+	{
 		return (d);
+	}
 	else 
 		return (0);
 }
+/*
+int main()
+{
+	char *s = "split  ||this|for|me|||||!|";
+	char **result = ft_split(s, '|');
+	int i = 0;
+	while (i <= 5)
+	{
+		printf("%s\n",result[i]);
+		i++;
+	}
+}
+*/
