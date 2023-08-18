@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:48:34 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/17 16:16:35 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/18 21:36:48 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,17 @@ size_t	ft_set_start(char const *s1, char const *set, size_t n)
 	size_t	l;
 
 	l = 0;
+	if (s1[n] && set[l])
 	{
-		if (s1[n] && set[l])
+		while (s1[n] == set[l] && set[l] != 0)
 		{
-			while (s1[n] == set[l] && set[l] != 0)
-			{
-				n++;
-				l = 0;
-				while (s1[n] != set[l] && set[l] != 0)
-					++l;
-			}
+			n++;
+			l = 0;
+			while (s1[n] != set[l] && set[l] != 0)
+				++l;
 		}
-		return (n);
 	}
+	return (n);
 }
 
 size_t	ft_set_end(char const *s1, char const *set, size_t n)
@@ -66,13 +64,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (s);
 	}
 	while (s1[n])
-		++n;
+		n++;
 	end = ft_set_end(s1, set, n - 1);
-	n = (end + 2 - start);
-	s = malloc (n);
-	n = 0;
+	s = malloc((end - start + 1));
 	if (!s)
 		return (NULL);
+	n = 0;
 	while (s1[start] && start <= end)
 		s[n++] = s1[start++];
 	s[n] = 0;
@@ -81,7 +78,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int	main(void)
 {
-	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
+	char *s1 = "lorem \n ipsum \t dolor \n sit \t amet";;
 	char *s2 = "Hello \t  Please\n Trim me !";
 	char *ret = ft_strtrim(s1, " \n\t");
 	

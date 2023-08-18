@@ -6,9 +6,11 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 11:56:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/17 23:39:50 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/18 17:57:03 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #include "libft.h"
 
@@ -66,37 +68,32 @@ char	**ft_split(char const *s, char c)
 	char	**d;
 	int		n;
 	int		l;
-	int		len;
 
 	l = 0;
 	n = 0;
 	start = 0;
-	if (!s[start] && c != 0)
-		return (0);
-	if (s)
+	if (s && c)
 	{
-		len = ft_len(s);
 		d = malloc(sizeof(char *) * (ft_c(s, c)));
 		if (!d)
 			return (0);
 	}
-	while (s && start <= len)
+	while (s && c && d && start <= ft_len(s))
 	{
 		while (s[start] == c)
 			start++;
 		end = ft_end(s, c, start);
 		d[l] = malloc(sizeof(char) * (end - start) + 1);
+		if (!d[l])
+			return (0);
 		n = 0;
-		while (start <= end && start <= len)
+		while (start <= end && start <= ft_len(s))
 			d[l][n++] = s[start++];
 		l++;
 	}
 	if (d)
-	{
 		return (d);
-	}
-	else 
-		return (0);
+	return (0);
 }
 /*
 int main()

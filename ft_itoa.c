@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:27:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/17 21:22:28 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/18 15:50:07 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,8 @@ char	*ft_itoa(int n)
 	char	*s;
 	int		len;
 
-    if (n == -2147483648)
-    {
-      s = malloc(sizeof(int)*12);
-      s = "-2147483648\0";
-      return (s);
-    }
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = ft_counting(n);
 	if (n != 0)
 	{

@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 20:15:12 by aken              #+#    #+#             */
-/*   Updated: 2023/08/18 17:59:00 by ahibrahi         ###   ########.fr       */
+/*   Created: 2023/08/18 17:24:46 by ahibrahi          #+#    #+#             */
+/*   Updated: 2023/08/18 19:45:37 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	n;
-	void	*my_cal;
+	unsigned int	i;
+	char			*str;
 
-	n = nmemb * size;
-	my_cal = malloc(n);
-	if (!my_cal)
-		return (0);
-	ft_bzero(my_cal, n);
-	return (my_cal);
+	i = 0;
+	if (!s || (!s && !f))
+		return (ft_strdup(""));
+	if (!f)
+		return (ft_strdup(s));
+	str = ft_strdup(s);
+	if (!str)
+		return (str = NULL);
+	while (s[i])
+	{
+		str[i] = (*f)(i, s[i]);
+		i++;
+	}
+	return (str);
 }
-/*
-int	main (void)
-{
-	int		*min_i;
-	char	*org_c;
-	int		*org_i;
-	char	*min_c;
-
-	min_i = (int *) ft_calloc(4, 10);
-	min_c = (char *) ft_calloc(4, 10);
-	org_i = (int *) ft_calloc(4, 10);
-	org_c = (char *) ft_calloc(4, 10);
-}
-*/

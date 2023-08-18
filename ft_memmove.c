@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:31:29 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/24 09:31:57 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/18 22:51:13 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ void	*ft_memmove(void *dest, const void *src, int n)
 	int		i;
 
 	i = 0;
+	if (!dest && !src)
+		return (0);
 	c_dest = (char *) dest;
 	c_src = (char *) src;
-	if (c_src > c_dest)
+	if (&c_src > &c_dest)
 	{
 		while (i < n)
 		{
@@ -43,7 +45,7 @@ void	*ft_memmove(void *dest, const void *src, int n)
 		}
 		return (0);
 	}
-	else if (c_src < c_dest)
+	else if (&c_src < &c_dest)
 	{
 		ft_rev_move(c_dest, c_src, n);
 	}
