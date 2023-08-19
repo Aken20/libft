@@ -6,13 +6,13 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 22:27:50 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/29 01:51:13 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/19 06:09:06 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, void *src, int n)
+void	*ft_memcpy(void *dest, const char *src, int n)
 {
 	char	*c_dest;
 	char	*c_src;

@@ -6,7 +6,7 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 23:37:36 by ahibrahi          #+#    #+#              #
-#    Updated: 2023/08/18 20:59:19 by ahibrahi         ###   ########.fr        #
+#    Updated: 2023/08/19 04:46:22 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ FILES = ft_memset \
 		ft_split \
 		ft_itoa \
 		ft_strmapi \
+		ft_striteri	\
 		ft_putchar_fd \
 		ft_putstr_fd \
 		ft_putendl_fd \

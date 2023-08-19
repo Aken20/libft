@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:27:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/18 15:50:07 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/19 02:47:44 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ static	char	*ft_set(char *s, int n)
 	len--;
 	if (!s)
 		return (0);
-	if (n > 10)
+	if (n > 0)
 		s[len] = (n % 10) + 48;
 	len--;
-	while (n > l)
+	while (n >= l)
 	{
 		l = l * 10;
 		c = (n % l);
@@ -61,6 +61,8 @@ char	*ft_itoa(int n)
 	char	*s;
 	int		len;
 
+	if (n == 0)
+		return (ft_strdup("0"));
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	len = ft_counting(n);
@@ -71,12 +73,6 @@ char	*ft_itoa(int n)
 			return (0);
 		s = ft_set(s, n);
 		s[len] = 0;
-		return (s);
-	}
-	if (n == 0)
-	{
-		s = malloc(2);
-		s = "0\0";
 		return (s);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:48:34 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/18 21:36:48 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/19 02:30:58 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,24 @@
 size_t	ft_set_start(char const *s1, char const *set, size_t n)
 {
 	size_t	l;
+	size_t	s_len;
 
 	l = 0;
+	s_len = 0;
+	while (set[s_len])
+		s_len++;
 	if (s1[n] && set[l])
 	{
-		while (s1[n] == set[l] && set[l] != 0)
+		while (l <= s_len)
 		{
-			n++;
-			l = 0;
-			while (s1[n] != set[l] && set[l] != 0)
-				++l;
+			while (s1[n] == set[l] && set[l] != 0)
+			{
+				n++;
+				l = 0;
+				while (s1[n] != set[l] && set[l] != 0)
+					++l;
+			}
+			l++;
 		}
 	}
 	return (n);
@@ -33,16 +41,24 @@ size_t	ft_set_start(char const *s1, char const *set, size_t n)
 size_t	ft_set_end(char const *s1, char const *set, size_t n)
 {
 	size_t	l;
+	size_t	s_len;
 
 	l = 0;
+	s_len = 0;
+	while (set[s_len])
+		s_len++;
 	if (s1[n] && set[l])
 	{
-		while (s1[n] == set[l] && set[l] != 0)
+		while (l <= s_len)
 		{
-			n--;
-			l = 0;
-			while (s1[n] != set[l] && set[l] != 0)
-				++l;
+			while (s1[n] == set[l] && set[l] != 0 && n > 0)
+			{
+				n--;
+				l = 0;
+				while (s1[n] != set[l] && set[l] != 0)
+					++l;
+			}
+			l++;
 		}
 	}
 	return (n);
@@ -59,14 +75,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if ((s1 && set) && (*s1 != 0 && *set != 0))
 		start = ft_set_start(s1, set, n);
 	else
-	{
-		s = "";
-		return (s);
-	}
+		return (ft_strdup(""));
 	while (s1[n])
 		n++;
 	end = ft_set_end(s1, set, n - 1);
-	s = malloc((end - start + 1));
+	if (start >= n || end >= n)
+		return (ft_strdup(""));
+	s = malloc((end - start + 2));
 	if (!s)
 		return (NULL);
 	n = 0;
@@ -75,14 +90,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s[n] = 0;
 	return (s);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
-	char *s1 = "lorem \n ipsum \t dolor \n sit \t amet";;
-	char *s2 = "Hello \t  Please\n Trim me !";
-	char *ret = ft_strtrim(s1, " \n\t");
+	char *s1 = "!!,, abdefgh, !  ,ijklomnop,, !!";;
+	char *ret = "! ,";
 	
-	printf("mine: %s\n right: %s\n", ret, s2);
+	printf("mine: %s", ft_strtrim(s1, ret));
 	return (0);
 }
-*/
+ */

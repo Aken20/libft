@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 22:16:58 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/18 21:29:01 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/18 23:41:19 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	n = 0;
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[n])
 		n++;
-	if ((start == 0 && len == 0))
-		return ((char *) s);
 	if (start > n)
 	{
 		sub = malloc(1);
