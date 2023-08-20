@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 12:52:10 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/02 15:18:24 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/20 12:53:14 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strrchr(const char *s, int c)
 		return (c_s);
 	}
 	--n;
-	while (s[n] && n >= 0)
+	while (s[n] && n > 0)
 	{
 		if (s[n] == c)
 		{
@@ -45,7 +45,7 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		--n;
 	}
-	if (s[n] == c)
+	if ((unsigned char)s[n] == (unsigned char)c)
 	{
 		c_s = (char *)s + n;
 		return (c_s);

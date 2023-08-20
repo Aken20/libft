@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:47:00 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/19 06:09:49 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/20 18:13:28 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_memcmp(const void *s1, const void *s2, int n);
-void	*ft_memchr(const void *s, int c, int n);
+void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *b, int c, unsigned int len);
 void	*ft_memcpy(void *dest, const char *src, int n);
 void	*ft_memmove(void *dest, const void *src, int n);

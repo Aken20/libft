@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 11:56:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/19 07:02:16 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/20 12:14:41 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ static	char	**ft_set(char const *s, char **d, char c, int cc)
 	l = 0;
 	n = 0;
 	start = 0;
-	while (c && start <= len && l < cc)
+	while (l < cc && start <= len)
 	{
-		while (s[start] == c)
+		while (s[start] && s[start] == c)
 			start++;
 		end = ft_end(s, c, start);
 		d[l] = malloc(sizeof(char) * (end - start + 2));
@@ -91,16 +91,13 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	cc = ft_c(s, c);
-	d = malloc(sizeof(char *) * (cc));
+	cc = (ft_c(s, c));
+	d = malloc(sizeof(char *) * (cc + 1));
 	if (!d)
 		return (0);
-	if (d)
-	{
-		d = ft_set(s, d, c, cc);
-		return (d);
-	}
-	return (0);
+	d = ft_set(s, d, c, cc);
+	d[cc] = (void *)0;
+	return (d);
 }
 /*
 int main()
@@ -114,16 +111,4 @@ int main()
 		i++;
 	}
 }
-
-int main() {
-    int i = 0;
-    char **tabstr;
-    tabstr = ft_split("lorem ipsum d", ' ');
-        while (tabstr[i] != NULL)
-        {
-            printf("%s",tabstr[i]);
-            write(1, "\n", 1);
-            i++;
-        }
-    return 0;
-}*/
+*/

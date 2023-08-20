@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 03:49:04 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/15 11:10:58 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/20 16:34:54 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,40 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	n;
-	char	*srcc;
+	char	*c_src;
+	char	*c_dest;
 
 	n = 0;
 	i = 0;
-	srcc = (char *)src;
-	n = ft_strlen(srcc);
-	if (!*dest)
-	{
+	c_src = (char *)src;
+	n = ft_strlen(c_src);
+	if (!dest)
 		return (n);
-	}
-	if (dstsize != 0)
+	c_dest = (char *) dest;
+	if (dstsize > 0)
 	{
-		while (i < n && dstsize > 1)
+		while (i < n && dstsize > 1 && c_src[i])
 		{
-			dest[i] = src[i];
+			c_dest[i] = c_src[i];
 			++i;
 			--dstsize;
 		}
-		dest[i] = '\0';
+		c_dest[i] = '\0';
 	}
 	return (n);
 }
 /*
 int main()
 {
-char src[] = "hashirama";
-char dest[] = "asdfghjhgfds";
-char dest2[99] = "poiuytreertl";
+char src[] = "coucou";
+char dest[10]; memset(dest, 'A', 10);
+char dest2[10]; memset(dest, 'A', 10);
 size_t s;
 s = 13;
-int i = strlcpy(dest, src, s);
-int k = ft_strlcpy(dest2, src, s);
+int i = strlcpy(dest, src, 2);
+int k = ft_strlcpy(dest2, src, 2);
 printf("org: %s\t%d\n", dest, i);
-printf("mine: %s\t%d\n", dest2, k);
+printf("mine: %s\t %d\n", dest2, k);
 return 0;
 }
 */
