@@ -6,33 +6,21 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 12:52:10 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/20 12:53:14 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/24 03:43:16 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_slen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-	{
-		len++;
-	}
-	return (len);
-}
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int		n;
 	char	*c_s;
 
-	n = ft_slen(s);
+	n = ft_strlen(s);
 	if (c == 0)
 	{
-		c_s = (char *)s + n;
+		c_s = (char *)(s + n);
 		return (c_s);
 	}
 	--n;

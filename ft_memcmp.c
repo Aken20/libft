@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 09:23:43 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/07/30 09:06:56 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/24 01:46:41 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int	ft_memcmp(const void *s1, const void *s2, int n)
 	while (i < c)
 	{
 		if (c_s1[i] == c_s2[i])
-		{
 			++i;
-		}
 		else
 			return (c_s1[i] - c_s2[i]);
 	}

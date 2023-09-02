@@ -1,47 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 11:35:35 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 01:48:03 by ahibrahi         ###   ########.fr       */
+/*   Created: 2023/08/23 23:13:09 by ahibrahi          #+#    #+#             */
+/*   Updated: 2023/08/23 23:34:29 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	char	*c_s;
+	int	i;
 
-	while (*s)
+	i = 1;
+	if (!lst)
+		return (0);
+	while (lst->next != NULL)
 	{
-		if (*s != (char)c)
-			++s;
-		else
-		{
-			c_s = (char *) s;
-			return (c_s);
-		}
+		++i;
+		lst = lst->next;
 	}
-	if (*s == (char)c)
-	{
-		c_s = (char *) s;
-		return (c_s);
-	}
-	return (NULL);
+	return (i);
 }
-/*
-int main()
-{
-char s[] = "minkdoksai";
-int c;
-c = 'k';
-char *ptr = strchr (s,c);
-printf("str: %s\n", ptr);
-char *mptr = ft_strchr (s,c);
-printf("my str: %s\n", mptr);
-}
-*/

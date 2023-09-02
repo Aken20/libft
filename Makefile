@@ -6,7 +6,7 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 23:37:36 by ahibrahi          #+#    #+#              #
-#    Updated: 2023/08/20 18:13:40 by ahibrahi         ###   ########.fr        #
+#    Updated: 2023/09/03 02:27:20 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ FILES = ft_memset ft_bzero ft_memcpy ft_strtrim ft_strlcat  \
 		ft_strjoin ft_split ft_itoa ft_strmapi ft_striteri       \
 		ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd     \
 		
-FILES_B =  \
+FILES_B = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back \
+          ft_lstdelone \
 			 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

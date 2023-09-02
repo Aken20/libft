@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 11:56:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/20 12:14:41 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/24 01:47:47 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,6 @@ static	int	ft_c(char const *s, char c)
 	return (cc);
 }
 
-static	int	ft_len(char const *s)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
-
 static	int	ft_end(char const *s, char c, int start)
 {
 	if (s[start] && s[start] != c)
@@ -63,7 +53,7 @@ static	char	**ft_set(char const *s, char **d, char c, int cc)
 	int		l;
 	int		len;
 
-	len = ft_len(s);
+	len = ft_strlen(s);
 	l = 0;
 	n = 0;
 	start = 0;
@@ -91,7 +81,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	cc = (ft_c(s, c));
+	cc = ft_c(s, c);
 	d = malloc(sizeof(char *) * (cc + 1));
 	if (!d)
 		return (0);

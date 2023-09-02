@@ -6,13 +6,13 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 22:16:58 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/20 15:51:33 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:39:25 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_m(unsigned int start, size_t len, size_t n)
+static	char	*ft_m(unsigned int start, size_t len, size_t n)
 {
 	char	*sub;
 

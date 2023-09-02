@@ -6,13 +6,13 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:31:29 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/18 23:33:28 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/08/24 01:42:35 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_rev_move(char *c_dest, char *c_src, int n)
+static	void	*ft_rev_move(char *c_dest, char *c_src, int n)
 {
 	int	i;
 
