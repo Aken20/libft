@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:03:28 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/26 00:43:38 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/03 09:09:31 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,15 @@ char	*ft_strnstr(const char *s_in, const char *s_for, size_t len)
 	return (NULL);
 }
 
-// int main()
-// {
-// 	char *str = ft_strnstr("lorem ipsum dolor sit amet", "consectetur", 30);
-// 	char *str2 = strnstr("lorem ipsum dolor sit amet", "consectetur", 30);
-// 	printf("%s\n%s", str, str2);
-// 	// char haystack[30] = "aaabcabcd";
-// 	// char needle[10] = "aabc";
-// 	// char haystack2[30] = "aaabcabcd";
-// 	// char needle2[10] = "aabc";
-//     // printf("org: %s\n", strnstr(haystack, needle, -1));
-//     // printf("my: %s\n", ft_strnstr(haystack2, needle2, -1));
-// }
+/* int main()
+{
+	char *str = ft_strnstr("lorem ipsum dolor sit amet", "consectetur", 30);
+	char *str2 = strnstr("lorem ipsum dolor sit amet", "consectetur", 30);
+	printf("%s\n%s", str, str2);
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	char haystack2[30] = "aaabcabcd";
+	char needle2[10] = "aabc";
+    printf("org: %s\n", strnstr(haystack, needle, -1));
+    printf("my: %s\n", ft_strnstr(haystack2, needle2, -1));
+} */

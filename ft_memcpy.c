@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 22:27:50 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/19 06:09:06 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/03 09:08:21 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	main(void)
 	printf("my memcpy %s\n", src);
 	memcpy(src2 + 2, src2, 3);
 	printf("memcpy %s\n", src);
-//
 	ft_memcpy(src, src +2, 4);
     printf("my memcpy %s\n", src);
     memcpy(src2 , src2 +2, 4);

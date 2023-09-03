@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:27:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/19 02:47:44 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/03 09:07:25 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,24 @@ static	int	ft_counting(int n)
 	return (len);
 }
 
-static	char	*ft_set(char *s, int n)
+static	char	*ft_set(char *s, int n, int len)
 {
 	int		c;
-	int		len;
 	long	l;
 
 	l = 10;
-	len = ft_counting(n);
 	if (n < 0)
 	{
 		s[0] = '-';
 		n = n * -1;
 	}
 	len--;
-	if (!s)
-		return (0);
 	if (n > 0)
 		s[len] = (n % 10) + 48;
 	len--;
 	while (n >= l)
 	{
-		l = l * 10;
+		l *= 10;
 		c = (n % l);
 		s[len] = c / (l / 10) + 48;
 		len--;
@@ -71,7 +67,7 @@ char	*ft_itoa(int n)
 		s = malloc(len + 1);
 		if (!s)
 			return (0);
-		s = ft_set(s, n);
+		s = ft_set(s, n, len);
 		s[len] = 0;
 		return (s);
 	}

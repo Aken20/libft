@@ -6,15 +6,15 @@
 #    By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 23:37:36 by ahibrahi          #+#    #+#              #
-#    Updated: 2023/09/03 02:27:20 by ahibrahi         ###   ########.fr        #
+#    Updated: 2023/09/03 08:46:47 by ahibrahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+AR = ar -rcs
 RM = rm -f
 
 FILES = ft_memset ft_bzero ft_memcpy ft_strtrim ft_strlcat  \

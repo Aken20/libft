@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:47:00 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/09/03 02:27:27 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/03 09:09:55 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
