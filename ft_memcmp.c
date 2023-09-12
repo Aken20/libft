@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 09:23:43 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 01:46:41 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:41:51 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,3 @@ int	ft_memcmp(const void *s1, const void *s2, int n)
 	}
 	return (0);
 }
-/*
-int main()
-{
-    char b[] = "boos9ng";
-    char b2[] = "boos9ng";
-    int k;
-	int p;
-    k = memcmp(b, b2, 17);
-    printf("org difrent is: %d \n", k);
-    p = ft_memcmp(b, b2, 17);
-    printf("my difrent is: %d", p);
-    return 0;
-}
-*/

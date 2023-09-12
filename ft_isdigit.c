@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:22:21 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 01:45:56 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:41:22 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
-/*
-int main(void)
-{
-    char c;
-    c = '0';
-    ft_isalnum(c);
-}
-*/

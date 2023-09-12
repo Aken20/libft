@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 22:16:58 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/25 17:39:25 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:43:30 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = 0;
 	return (sub);
 }
-/*
-int	main(void)
-{
-	char	s[] = "y9";
-	char	*k;
-
-	k = ft_substr(s, 0, 1);
-	printf("is :%s\n", k);
-}
-*/

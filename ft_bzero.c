@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:37:49 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/26 01:57:08 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:44:59 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,3 @@ void	*ft_bzero(void *s, int n)
 	}
 	return (c_s);
 }
-
-/* int main()
-{
-    char s[] = "boooring";
-    char s2[] = "boooring";
-    ft_bzero(s, 2);
-    bzero(s2, 2);
-    printf("my: %s\n", s);
-    printf("org: %s\n", s2);
-} */

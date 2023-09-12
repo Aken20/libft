@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 11:56:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 01:47:47 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 05:49:31 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,17 @@ static	int	ft_end(char const *s, char c, int start)
 	return (start);
 }
 
+static	char	**ft_free(char **d, int l)
+{
+	while (l >= 0)
+	{
+		free(d[l]);
+		l--;
+	}
+	free(d);
+	return (0);
+}
+
 static	char	**ft_set(char const *s, char **d, char c, int cc)
 {
 	int		start;
@@ -64,7 +75,7 @@ static	char	**ft_set(char const *s, char **d, char c, int cc)
 		end = ft_end(s, c, start);
 		d[l] = malloc(sizeof(char) * (end - start + 2));
 		if (!d[l])
-			return (0);
+			return (ft_free(d, l));
 		n = 0;
 		while (start <= end && start <= len)
 			d[l][n++] = s[start++];
@@ -84,21 +95,12 @@ char	**ft_split(char const *s, char c)
 	cc = ft_c(s, c);
 	d = malloc(sizeof(char *) * (cc + 1));
 	if (!d)
-		return (0);
+		return (NULL);
 	d = ft_set(s, d, c, cc);
-	d[cc] = (void *)0;
-	return (d);
-}
-/*
-int main()
-{
-	char *s = "split  ||this|for|me|||||!|";
-	char **result = ft_split(s, '|');
-	int i = 0;
-	while (i <= 5)
+	if (d)
 	{
-		printf("%s\n",result[i]);
-		i++;
+		d[cc] = (void *)0;
+		return (d);
 	}
+	return (0);
 }
-*/

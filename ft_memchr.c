@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:54:30 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/20 12:50:14 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:41:45 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-char s[] = {0, 1, 2 ,3 ,4 ,5};
-int c;
-c = 'p';
-char *ptr = memchr (s, 2 + 256, 3);
-printf("str: %s\n", ptr);
-char *mptr = ft_memchr (s, 2 + 256, 3);
-printf("my str: %s\n", mptr);
-}
-*/

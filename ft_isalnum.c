@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:26 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 01:45:34 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:45:04 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-/*
-int main(void)
-{
-    char c;
-    c = 'k';
-    ft_isalnum(c);
-}
-*/

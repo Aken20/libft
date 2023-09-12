@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:48:34 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/09/03 02:22:44 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:43:25 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	n;
 
+	if (!s1)
+		return (0);
 	if (!set || *set == 0 || (*s1 != 0 && *set == 0))
 		return (ft_strdup(s1));
 	n = 0;
-	if ((s1 && set) && (*s1 != 0 && *set != 0))
-		start = ft_set_start(s1, set, n);
-	else
-		return (ft_strdup(""));
+	start = ft_set_start(s1, set, n);
 	while (s1[n])
 		n++;
 	end = ft_set_end(s1, set, n - 1);
@@ -92,13 +91,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s[n] = 0;
 	return (s);
 }
-/*
-int	main(void)
-{
-	char *s = ft_strtrim("123", "");
-	char *ret = "123";
-
-	printf("mine: %s", s);
-	return (0);
-}
-*/

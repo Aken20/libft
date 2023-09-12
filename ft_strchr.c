@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:35:35 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 01:48:03 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:42:33 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-char s[] = "minkdoksai";
-int c;
-c = 'k';
-char *ptr = strchr (s,c);
-printf("str: %s\n", ptr);
-char *mptr = ft_strchr (s,c);
-printf("my str: %s\n", mptr);
-}
-*/

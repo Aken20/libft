@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 19:01:42 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/19 05:33:03 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:45:30 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ static	void	ft_set(int n, int fd, int len)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
 	int		len;
 
-	i = 0;
 	if (n < 0)
 	{
 		write(fd, "-", 1);

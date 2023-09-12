@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:49:26 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 04:07:49 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:43:34 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,3 @@ int	ft_tolower(int c)
 	else
 		return (c);
 }
-/*
-int main (void)
-{
-int i;
-i = 0;
-char c[] = "AbHFTFdc2233  defgoudZ";
-ft_tolower (c);
-while (c[i] != 0)
-{
-write (1, &c[i], 1);
-++i;
-}
-write (1, "\n", 1);
-
-return 0;
-}
-*/

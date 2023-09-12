@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 06:50:44 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/09/03 08:58:36 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:44:55 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,3 @@ int	ft_atoi(const char *str)
 		aoi = (aoi * 10) + (str[i++] - 48);
 	return (aoi * s);
 }
-
-/* int	main(void)
-{
-	char *n = "+999999999999999999";
-	int i1 = atoi(n);
-	int i2 = ft_atoi(n);
-	printf("min %i\n", i2);
-	printf("org %i\n", i1);
-} */

@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 23:15:48 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/08/24 04:07:40 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2023/09/10 03:43:39 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,3 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
-/*
-int main (void)
-{
-int i;
-i = 0;
-char c[] = "abcdefgoudj";
-char *cc;
-*cc = ft_toupper (c);
-while (cc[i] != 0)
-{
-write (1, &cc[i], 1);
-++i;
-}
-write (1, "\n", 1);
-
-return 0;
-}
-*/
