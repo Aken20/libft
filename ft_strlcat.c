@@ -6,7 +6,7 @@
 /*   By: ahibrahi <ahibrahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 12:00:07 by ahibrahi          #+#    #+#             */
-/*   Updated: 2023/09/10 03:42:46 by ahibrahi         ###   ########.fr       */
+/*   Updated: 2024/01/24 00:13:23 by ahibrahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[c] = (0);
 	if (size >= k)
 		return (k + n);
-	else 
+	else
 		return (size + n);
 }
